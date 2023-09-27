@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js 6</title>
+  <style>
+    h1 {
+      color: blue;
+      text-align: center;
+      margin-left: 0px;
+    }
+    textarea {
+      height: 50px;
+      padding-right: 200px;
+    }
+    input {
+      padding-right: 200px;
+    }
+    .sub {
+      padding-right: 0;
+    }
+    table {
+      margin-left: 400px;
+    }
+    p {
+      color: red;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    td {
+      padding-bottom: 8px;
+    padding-right: 0px;
+    }
+    /* Style the checkbox container (a pseudo-element) */
+
+
+  </style>
+</head>
+<body>
+  <h1>Registration form</h1>
+  <form onsubmit="return fun()">
+    <table cellspacing="0">
+      <tr>
+        <th>First Name</th>
+        <td><input type="text" id="fn"></td>
+        <th><p id="fn1"></p></th>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td><input type="text" id="ln"></td>
+        <th><p id="ln1"></p></th>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><input type="email" id="email"></td>
+        <th><p id="email1"></p></th>
+      </tr>
+      <tr>
+        <th>Password</th>
+        <td><input type="password" id="password"></td>
+        <th><p id="password1"></p></th>
+      </tr>
+      <tr>
+        <th>Re-enter Password</th>
+        <td><input type="password" id="repassword"></td>
+        <th><p id="repassword1"></p></th>
+      </tr>
+      <tr>
+        <th rowspan="2">Gender:</th>
+        <td><input type="radio" name="gen">Male</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="gen">Female</td>
+      </tr>
+      <tr>
+        <th>Age:</th>
+        <td><input type="text" id="age"></td>
+        <th><p id="age1"></p></th>
+      </tr>
+      <tr>
+        <th>Phone Number</th>
+        <td><input type="text" id="phone"></td>
+        <th><p id="phone1"></p></th>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td><textarea id="text"></textarea></td>
+        <th><p id="text1"></p></th>
+      </tr>
+      <tr>
+        <th>State</th>
+        <td><input type="text" id="state"></td>
+        <th><p id="state1"></p></th>
+      </tr>
+      <tr>
+        <th>Country</th>
+        <td>
+          <select>
+            <option>Choose your country</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>Languages known</th>
+        <td>
+          <input type="checkbox">English
+          <input type="checkbox">Kannada
+          <input type="checkbox">Hindi
+          <input type="checkbox">Telugu
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="checkbox" style="background-color: blue;" id="s"> Hereby I declare all the given details are true
+        </td>
+      </tr>
+      <tr class="sd">
+        <td colspan="2" style="text-align: end;">
+          Log in to <a href="https://www.ethnus.com">Ethnus</a> Website
+        </td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" class="sub" value="REGISTER" style="margin-left: 625px; background-color: red; color: white; border: 1px solid black; border-radius: 15px; padding-left: 15px; padding-right: 15px;">
+  </form>
+  <script>
+    function fun() {
+      var a = document.getElementById("fn").value;
+      var b = document.getElementById("ln").value;
+      var c = document.getElementById("email").value;
+      var d = document.getElementById("password").value;
+      var e = document.getElementById("repassword").value;
+      var f = document.getElementById("age").value;
+      var g = document.getElementById("phone").value;
+      var h = document.getElementById("text").value;
+      var i = document.getElementById("state").value;
+
+      if (a === '' || b === '' || c === '' || d === '' || e === '' || f === '' || g === '' || h === '' || i === '') {
+        document.getElementById("fn1").innerText = "POOR";
+        document.getElementById("ln1").innerText = "POOR";
+        document.getElementById("email1").innerText = "POOR";
+        document.getElementById("password1").innerText = "POOR";
+        document.getElementById("repassword1").innerText = "POOR OR MISMATCH";
+        document.getElementById("age1").innerText = "POOR";
+        document.getElementById("phone1").innerText = "POOR";
+        document.getElementById("text1").innerText = "POOR";
+        document.getElementById("state1").innerText = "POOR";
+
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>

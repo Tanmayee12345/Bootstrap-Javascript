@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 1</title>
+</head>
+<body>
+  <form onsubmit="revfun(); return false;">
+    <label>Enter a number:</label><br>
+    <input type="text" id="a1"><br>
+    <input type="submit" value="Reverse"><br>
+    <label>After reversing a number:</label><br>
+    <input type="text" id="res" readonly>
+  </form>
+  <script>
+    function revfun() {
+      var a = document.getElementById("a1").value;
+      var result = 0;
+      var rem;
+      while (a > 0) {
+        rem = a % 10;
+        result = result * 10 + rem;
+        a = Math.floor(a / 10); 
+      }
+      document.getElementById("res").value = result;
+    }
+  </script>
+</body>
+</html>

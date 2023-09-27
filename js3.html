@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript 3</title>
+  <style>
+   
+    .blue-border {
+      border: 2px solid skyblue;
+    }
+  </style>
+</head>
+<body>
+  <form onsubmit="fun(); return false;">
+    <label>Enter number 1:</label><br>
+    <input type="text" id="a1"><br><br>
+    <label>Enter number 2:</label><br>
+    <input type="text" id="a2"><br><br>
+    <input type="submit" value="Multiply" onclick="setBlueBorder(this)">
+    <input type="submit" value="Divide" onclick="setBlueBorder(this)"><br><br>
+    <label>The result is:</label><br>
+    <p id="res"></p>
+  </form>
+  <script>
+    function fun() {
+      var inputString1 = document.getElementById("a1").value;
+      var inputString2 = document.getElementById("a2").value;
+      var result = 0;
+      
+      if (isNaN(inputString1) || isNaN(inputString2)) {
+        document.getElementById("res").innerText = "Please enter valid numbers.";
+      } else {
+        inputString1 = parseFloat(inputString1);
+        inputString2 = parseFloat(inputString2);
+
+        var btnClicked = event.submitter.value;
+
+        if (btnClicked === "Multiply") {
+          result = inputString1 * inputString2;
+        } else if (btnClicked === "Divide" && inputString2 !== 0) {
+          result = inputString1 / inputString2;
+        } else {
+          document.getElementById("res").innerText = "Division by zero is not allowed.";
+          return;
+        }
+
+        document.getElementById("res").innerText =  result;
+      }
+    }
+
+    function setBlueBorder(button) {
+    
+      button.classList.add("blue-border");
+    }
+  </script>
+</body>
+</html>

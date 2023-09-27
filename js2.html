@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript 2</title>
+</head>
+<body>
+  <form onsubmit="sortString(); return false;">
+    <label>Enter a string:</label><br>
+    <input type="text" id="a1"><br><br>
+    <input type="submit" value="Submit"><br><br>
+    <label>String with letters in alphabetical order:</label><br>
+    <input type="text" id="res" readonly>
+  </form>
+  <script>
+    function sortString() {
+      var inputString = document.getElementById("a1").value;
+      var sortedString = inputString.split('').sort().join('');
+      document.getElementById("res").value = sortedString;
+    }
+  </script>
+</body>
+</html>
+
